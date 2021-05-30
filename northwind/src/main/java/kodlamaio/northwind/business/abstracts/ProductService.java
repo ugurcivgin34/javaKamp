@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import kodlamaio.northwind.core.utilities.results.DataResult;
 import kodlamaio.northwind.core.utilities.results.Result;
 import kodlamaio.northwind.entitites.concretes.Product;
+import kodlamaio.northwind.entitites.dtos.ProductWithCategoryDto;
 
 public interface ProductService {
 	DataResult<List<Product>> getAll();
@@ -27,4 +28,6 @@ public interface ProductService {
     DataResult<List<Product>> getByProductNameStartsWith(String productName);
 
     DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId);
+    
+    DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails();
 }
